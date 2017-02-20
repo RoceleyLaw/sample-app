@@ -3,8 +3,8 @@ import { Hero } from '../app/hero';
 
 @Component({
   selector: 'my-app',
-  template: `<hero-form></hero-form>`
+  template: '<hero-form></hero-form>'
 })
 
 export class AppComponent  {
- }
+}
