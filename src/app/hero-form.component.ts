@@ -11,7 +11,7 @@ import { Hero }    from '../app/hero';
   //We threw in a diagnostic property to return a JSON representation of our model. It'll help us see what we're doing during our development; we've left ourselves a cleanup note to discard it later.
   moduleId: module.id,
   selector: 'hero-form',
-  templateUrl: './hero-form.component.html'
+  templateUrl: '../app/hero-form.component.html'
 })
 export class HeroFormComponent {
 
