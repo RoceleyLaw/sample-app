@@ -30,7 +30,7 @@ var AppComponent = (function () {
     AppComponent = __decorate([
         core_1.Component({
             selector: 'my-app',
-            template: "<h1>{{name}}</h1>\n      <h2>My favorite hero is: {{myHero}}</h2>\n      <button (click) = \"onClick()\">Click Me!</button>\n      <input #box value=\"come on\" (keyup.enter) = \"onKey(box.value); box.value=''\">\n      <button (click)=\"onKey(box.value)\">Add</button>\n      <ul>\n        <li *ngFor=\"let hero of heroes\">{{hero.name}}</li>\n        <li>{{box.value}}</li>\n      </ul>\n\n      <p>Heroes:</p>\n      <ul>\n        <li *ngFor=\"let hero of heroes\">\n          {{hero.name}}\n        </li>\n      </ul>\n      <p *ngIf=\"heroes.length > 3\">There are many heroes!</p>\n      <p>{{name}}</p>"
+            template: '<hero-form></hero-form>'
         }), 
         __metadata('design:paramtypes', [])
     ], AppComponent);
