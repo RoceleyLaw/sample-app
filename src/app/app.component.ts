@@ -9,10 +9,7 @@ import { Hero } from '../app/hero';
 export class AppComponent  {
   name = 'Angular';
   title = 'This is Our Tour of Heroes';
-  heroes: Array<Hero> = [new Hero(1,'Winston','omg','omg'),
-                         new Hero(2, 'Roceley','omg','omg'),
-                         new Hero(3, 'Leo','omg','omg'),
-                         new Hero(2, 'Sam','omg','omg')];
+  heroes: Hero[];
   values = '';
 
   onClick = () => {

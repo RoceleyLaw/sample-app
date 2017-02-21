@@ -12,6 +12,7 @@ var core_1 = require('@angular/core');
 var hero_1 = require('../app/hero');
 var HeroFormComponent = (function () {
     function HeroFormComponent() {
+        this.name = 'Roceley';
         this.powers = ['Really Smart', 'Super Flexible',
             'Super Hot', 'Weather Changer'];
         this.model = new hero_1.Hero(18, 'Dr IQ', this.powers[0], 'Chuck Overstreet');
@@ -35,7 +36,7 @@ var HeroFormComponent = (function () {
             //We threw in a diagnostic property to return a JSON representation of our model. It'll help us see what we're doing during our development; we've left ourselves a cleanup note to discard it later.
             moduleId: module.id,
             selector: 'hero-form',
-            templateUrl: './hero-form.component.html'
+            templateUrl: '../app/hero-form.component.html'
         }), 
         __metadata('design:paramtypes', [])
     ], HeroFormComponent);

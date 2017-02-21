@@ -9,27 +9,18 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var AppComponent = (function () {
-    function AppComponent() {
-        var _this = this;
-        this.name = 'Angular';
-        this.title = 'This is Our Tour of Heroes';
-        this.values = '';
-        this.onClick = function () {
-            _this.name = 'this is me';
-        };
-        this.onKey = function (value) {
-            _this.values = value + ' | ';
-        };
+var mock_hero_1 = require('./mock-hero');
+var HeroService = (function () {
+    function HeroService() {
     }
-    AppComponent = __decorate([
-        core_1.Component({
-            selector: 'my-app',
-            template: '<hero-form></hero-form>'
-        }), 
+    HeroService.prototype.getHeroes = function () {
+        return mock_hero_1.Heroes;
+    }; // stub
+    HeroService = __decorate([
+        core_1.Injectable(), 
         __metadata('design:paramtypes', [])
-    ], AppComponent);
-    return AppComponent;
+    ], HeroService);
+    return HeroService;
 }());
-exports.AppComponent = AppComponent;
-//# sourceMappingURL=app.component.js.map
+exports.HeroService = HeroService;
+//# sourceMappingURL=hero.service.js.map

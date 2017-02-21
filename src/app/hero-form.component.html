@@ -11,7 +11,7 @@
         <input #box value="come on" (keyup.enter) = "onKey(box.value); box.value=''">
         <button (click)="onKey(box.value)">Add</button>
         <ul>
-          <li *ngFor="let hero of heroes">{{hero.name}}</li>
+          <li *ngFor="let hero of heroes">{{hero.name}} {{hero.power}}</li>
           <li>{{box.value}}</li>
         </ul>
 
