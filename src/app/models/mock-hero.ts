@@ -1,7 +1,7 @@
-import { Hero } from '../app/hero'
+import { Hero } from '../../app/models/hero'
 
 
-export const heroes: Hero[] = [
+export const Heroes: Hero[] = [
   new Hero(1,'Winston','omg','omg'),
   new Hero(2, 'Roceley','omg','omg'),
   new Hero(3, 'Leo','omg','omg'),

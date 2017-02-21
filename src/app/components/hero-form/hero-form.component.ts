@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { Hero }    from '../app/hero';
-import { HeroService } from './hero.service';
+import { Hero }    from '../../../app/models/hero';
+import { HeroService } from '../../services/hero.service';
 
 @Component({
   //Understanding this component requires only the Angular concepts covered in previous guides.
@@ -12,7 +12,7 @@ import { HeroService } from './hero.service';
   //We threw in a diagnostic property to return a JSON representation of our model. It'll help us see what we're doing during our development; we've left ourselves a cleanup note to discard it later.
   moduleId: module.id,
   selector: 'hero-form',
-  templateUrl: '../app/hero-form.component.html'
+  templateUrl: 'hero-form.component.html'
 })
 export class HeroFormComponent {
 

@@ -9,7 +9,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var hero_1 = require('../app/hero');
+var hero_1 = require('../../../app/models/hero');
 var HeroFormComponent = (function () {
     function HeroFormComponent() {
         this.name = 'Roceley';
@@ -36,7 +36,7 @@ var HeroFormComponent = (function () {
             //We threw in a diagnostic property to return a JSON representation of our model. It'll help us see what we're doing during our development; we've left ourselves a cleanup note to discard it later.
             moduleId: module.id,
             selector: 'hero-form',
-            templateUrl: '../app/hero-form.component.html'
+            templateUrl: 'hero-form.component.html'
         }), 
         __metadata('design:paramtypes', [])
     ], HeroFormComponent);
