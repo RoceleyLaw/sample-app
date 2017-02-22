@@ -11,7 +11,7 @@ import { Hero }    from '../app/hero';
   //We threw in a diagnostic property to return a JSON representation of our model. It'll help us see what we're doing during our development; we've left ourselves a cleanup note to discard it later.
   moduleId: module.id,
   selector: 'hero-form',
-  templateUrl: './hero-form.component.html'
+  templateUrl: 'hero-form.component.html'
 })
 export class HeroFormComponent {
 
@@ -23,6 +23,22 @@ export class HeroFormComponent {
   submitted = false;
 
   onSubmit() { this.submitted = true; }
+
+  name = 'Angular';
+  title = 'This is Our Tour of Heroes';
+  heroes: Array<Hero> = [new Hero(1,'Winston','omg','omg'),
+                         new Hero(2, 'Roceley','omg','omg'),
+                         new Hero(3, 'Leo','omg','omg'),
+                         new Hero(2, 'Sam','omg','omg')];
+  values = '';
+
+  onClick = () => {
+      this.name = 'this is me';
+  }
+
+  onKey = (value:string) => { // with type info
+   this.values = value + ' | ';
+ }
 
   // TODO: Remove this when we're done
   get diagnostic() { return JSON.stringify(this.model); }
