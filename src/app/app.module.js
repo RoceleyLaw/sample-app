@@ -9,10 +9,13 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
+var router_1 = require('@angular/router');
 var platform_browser_1 = require('@angular/platform-browser');
 var forms_1 = require('@angular/forms');
 var app_component_1 = require('./app.component');
 var hero_form_component_1 = require('../app/components/hero-form/hero-form.component');
+var hero_detail_component_1 = require('../app/components/hero-detail/hero-detail.component');
+var dashBoard_component_1 = require('../app/components/dashBoard/dashBoard.component');
 var hero_service_1 = require('./services/hero.service');
 var AppModule = (function () {
     function AppModule() {
@@ -21,11 +24,32 @@ var AppModule = (function () {
         core_1.NgModule({
             imports: [
                 platform_browser_1.BrowserModule,
-                forms_1.FormsModule
+                forms_1.FormsModule,
+                router_1.RouterModule.forRoot([
+                    {
+                        path: 'hero-form',
+                        component: hero_form_component_1.HeroFormComponent
+                    },
+                    {
+                        path: '',
+                        redirectTo: '/dashboard',
+                        pathMatch: 'full'
+                    },
+                    {
+                        path: 'dashboard',
+                        component: dashBoard_component_1.DashBoardComponent
+                    },
+                    {
+                        path: 'hero-detail',
+                        component: hero_detail_component_1.HeroDetailComponent
+                    }
+                ])
             ],
             declarations: [
                 app_component_1.AppComponent,
-                hero_form_component_1.HeroFormComponent
+                hero_form_component_1.HeroFormComponent,
+                hero_detail_component_1.HeroDetailComponent,
+                dashBoard_component_1.DashBoardComponent
             ],
             providers: [
                 hero_service_1.HeroService

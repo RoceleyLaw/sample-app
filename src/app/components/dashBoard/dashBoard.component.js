@@ -9,18 +9,17 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var AppComponent = (function () {
-    function AppComponent() {
-        this.title = 'Our Tour of Heroes';
+var DashBoardComponent = (function () {
+    function DashBoardComponent() {
     }
-    AppComponent = __decorate([
+    DashBoardComponent = __decorate([
         core_1.Component({
-            selector: 'my-app',
-            template: "\n  <h1>{{title}}}</h1>\n   <a routerLink=\"/hero-form\">Heroes</a>\n   <router-outlet></router-outlet>\n  "
+            selector: 'my-dashboard',
+            templateUrl: 'dashBoard.component.html'
         }), 
         __metadata('design:paramtypes', [])
-    ], AppComponent);
-    return AppComponent;
+    ], DashBoardComponent);
+    return DashBoardComponent;
 }());
-exports.AppComponent = AppComponent;
-//# sourceMappingURL=app.component.js.map
+exports.DashBoardComponent = DashBoardComponent;
+//# sourceMappingURL=dashBoard.component.js.map
