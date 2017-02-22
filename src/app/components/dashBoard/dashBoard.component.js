@@ -9,15 +9,21 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
+var hero_service_1 = require('../../services/hero.service');
 var DashBoardComponent = (function () {
-    function DashBoardComponent() {
+    function DashBoardComponent(heroService) {
+        this.heroService = heroService;
+        this.heroes = [];
     }
+    DashBoardComponent.prototype.ngOnInit = function () {
+        this.heroes = this.heroService.getHeroes();
+    };
     DashBoardComponent = __decorate([
         core_1.Component({
             selector: 'my-dashboard',
             templateUrl: 'dashBoard.component.html'
         }), 
-        __metadata('design:paramtypes', [])
+        __metadata('design:paramtypes', [hero_service_1.HeroService])
     ], DashBoardComponent);
     return DashBoardComponent;
 }());
