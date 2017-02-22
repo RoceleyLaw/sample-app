@@ -1,36 +1,13 @@
 import { Component } from '@angular/core';
-import { Hero } from '../app/models/hero';
-import { HeroService } from './services/hero.service';
 
 @Component({
   selector: 'my-app',
-  template: '<hero-form></hero-form>',
-  providers: [HeroService]
+  template: `
+  <h1>{{title}}}</h1>
+  <hero-form></hero-form>
+  `
 })
 
 export class AppComponent  {
-
-  name = 'Angular';
-  title = 'This is Our Tour of Heroes';
-  heroes: Hero[];
-  values = '';
-
-  constructor(private heroService: HeroService) { }
-
-  onClick = ():void => {
-      this.name = 'this is me';
-  }
-
-  onKey = (value:string):void => { // with type info
-   this.values = value + ' | ';
- }
-
-  getHeroes = (): void => {
-    this.heroService.getHeroes().then(heroes => this.heroes = heroes);
-  }
-
-  ngOnInit = (): void  => {
-    this.getHeroes();
-  }
-
+  title = 'Our Tour of Heroes';
  }

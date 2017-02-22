@@ -13,6 +13,7 @@ var platform_browser_1 = require('@angular/platform-browser');
 var forms_1 = require('@angular/forms');
 var app_component_1 = require('./app.component');
 var hero_form_component_1 = require('../app/components/hero-form/hero-form.component');
+var hero_service_1 = require('./services/hero.service');
 var AppModule = (function () {
     function AppModule() {
     }
@@ -25,6 +26,9 @@ var AppModule = (function () {
             declarations: [
                 app_component_1.AppComponent,
                 hero_form_component_1.HeroFormComponent
+            ],
+            providers: [
+                hero_service_1.HeroService
             ],
             bootstrap: [app_component_1.AppComponent]
         }), 

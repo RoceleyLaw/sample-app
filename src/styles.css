@@ -8,3 +8,21 @@ input {
   border-style: solid;
   border-color: black;
 }
+
+.button-small {
+  border-radius: 10em;
+  background-color: grey;
+  text-align: center;
+  text-decoration-color: blue;
+  color: white;
+}
+
+ .hero-list {
+   background-color: #949B9D;
+   padding: 2em;
+   margin: 2%;
+   border-left-style:solid;
+   border-left-width: 1em;
+   border-left-color: #0072BD;
+
+ }

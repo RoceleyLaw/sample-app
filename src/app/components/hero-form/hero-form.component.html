@@ -5,23 +5,22 @@
     <title>hero-form</title>
   </head>
   <body>
-    <h1>{{name}}</h1>
-        <h2>My favorite hero is: {{myHero}}</h2>
+    <h1>Tour of Heroes</h1>
+        <button type="button" class="button-small">DashBoard</button>
+        <button type="button" class="button-small">Heroes</button>
+
+        <p>
         <button (click) = "onClick()">Click Me!</button>
         <input #box value="come on" (keyup.enter) = "onKey(box.value); box.value=''">
         <button (click)="onKey(box.value)">Add</button>
-        <ul>
-          <li *ngFor="let hero of heroes">{{hero.name}} {{hero.power}}</li>
-          <li>{{box.value}}</li>
-        </ul>
+        </p>
 
         <p>Heroes:</p>
         <ul>
-          <li *ngFor="let hero of heroes">
+          <li *ngFor="let hero of heroes" class="hero-list">
             {{hero.name}}
           </li>
         </ul>
         <p *ngIf="heroes.length > 3">There are many heroes!</p>
-        <p>{{name}}</p>
   </body>
 </html>

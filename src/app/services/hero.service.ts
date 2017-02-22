@@ -5,7 +5,8 @@ import { Hero } from '../../app/models/hero'
 
 @Injectable()
 export class HeroService {
-  getHeroes(): Promise<Hero[]> {
-    return Promise.resolve(Heroes);
+
+  public getHeroes(): Hero[] {
+    return Heroes;
   }
 }

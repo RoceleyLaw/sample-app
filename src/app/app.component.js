@@ -9,34 +9,16 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var hero_service_1 = require('./services/hero.service');
 var AppComponent = (function () {
-    function AppComponent(heroService) {
-        var _this = this;
-        this.heroService = heroService;
-        this.name = 'Angular';
-        this.title = 'This is Our Tour of Heroes';
-        this.values = '';
-        this.onClick = function () {
-            _this.name = 'this is me';
-        };
-        this.onKey = function (value) {
-            _this.values = value + ' | ';
-        };
-        this.getHeroes = function () {
-            _this.heroService.getHeroes().then(function (heroes) { return _this.heroes = heroes; });
-        };
-        this.ngOnInit = function () {
-            _this.getHeroes();
-        };
+    function AppComponent() {
+        this.title = 'Our Tour of Heroes';
     }
     AppComponent = __decorate([
         core_1.Component({
             selector: 'my-app',
-            template: '<hero-form></hero-form>',
-            providers: [hero_service_1.HeroService]
+            template: "\n  <h1>{{title}}}</h1>\n  <hero-form></hero-form>\n  "
         }), 
-        __metadata('design:paramtypes', [hero_service_1.HeroService])
+        __metadata('design:paramtypes', [])
     ], AppComponent);
     return AppComponent;
 }());

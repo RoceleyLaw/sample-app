@@ -12,7 +12,8 @@ import { HeroService } from '../../services/hero.service';
   //We threw in a diagnostic property to return a JSON representation of our model. It'll help us see what we're doing during our development; we've left ourselves a cleanup note to discard it later.
   moduleId: module.id,
   selector: 'hero-form',
-  templateUrl: 'hero-form.component.html'
+  templateUrl: 'hero-form.component.html',
+  provider: [ HeroService ]
 })
 export class HeroFormComponent {
 
@@ -25,7 +26,21 @@ export class HeroFormComponent {
 
   heroes: Hero[];
 
+  values = '';
+
   submitted = false;
+
+  constructor(private _heroService:HeroService){
+    this.heroes = this._heroService.getHeroes();
+  }
+
+  onClick = ():void => {
+      this.name = 'this is me';
+  }
+
+  onKey = (value:string):void => { // with type info
+      this.values = value + ' | ';
+  }
 
   onSubmit() { this.submitted = true; }
 

@@ -10,13 +10,24 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require('@angular/core');
 var hero_1 = require('../../../app/models/hero');
+var hero_service_1 = require('../../services/hero.service');
 var HeroFormComponent = (function () {
-    function HeroFormComponent() {
+    function HeroFormComponent(_heroService) {
+        var _this = this;
+        this._heroService = _heroService;
         this.name = 'Roceley';
         this.powers = ['Really Smart', 'Super Flexible',
             'Super Hot', 'Weather Changer'];
         this.model = new hero_1.Hero(18, 'Dr IQ', this.powers[0], 'Chuck Overstreet');
+        this.values = '';
         this.submitted = false;
+        this.onClick = function () {
+            _this.name = 'this is me';
+        };
+        this.onKey = function (value) {
+            _this.values = value + ' | ';
+        };
+        this.heroes = this._heroService.getHeroes();
     }
     HeroFormComponent.prototype.onSubmit = function () { this.submitted = true; };
     Object.defineProperty(HeroFormComponent.prototype, "diagnostic", {
@@ -36,9 +47,10 @@ var HeroFormComponent = (function () {
             //We threw in a diagnostic property to return a JSON representation of our model. It'll help us see what we're doing during our development; we've left ourselves a cleanup note to discard it later.
             moduleId: module.id,
             selector: 'hero-form',
-            templateUrl: 'hero-form.component.html'
+            templateUrl: 'hero-form.component.html',
+            provider: [hero_service_1.HeroService]
         }), 
-        __metadata('design:paramtypes', [])
+        __metadata('design:paramtypes', [hero_service_1.HeroService])
     ], HeroFormComponent);
     return HeroFormComponent;
 }());
