@@ -1,5 +1,7 @@
-import { Component } from '@angular/core';
-import { Hero }    from '../app/hero';
+import { Component, OnInit } from '@angular/core';
+import { Hero }    from '../../models/hero';
+import { HeroService } from '../../services/hero.service';
+import { Router } from '@angular/router';
 
 @Component({
   //Understanding this component requires only the Angular concepts covered in previous guides.
@@ -11,19 +13,37 @@ import { Hero }    from '../app/hero';
   //We threw in a diagnostic property to return a JSON representation of our model. It'll help us see what we're doing during our development; we've left ourselves a cleanup note to discard it later.
   moduleId: module.id,
   selector: 'hero-form',
-  templateUrl: './hero-form.component.html'
+  providers: [HeroService],
+  templateUrl: 'hero-form.component.html',
+  styleUrls:['hero-form.css']
 })
-export class HeroFormComponent {
+export class HeroFormComponent implements OnInit {
 
-  powers = ['Really Smart', 'Super Flexible',
-            'Super Hot', 'Weather Changer'];
+  public title = 'Tour of Heroes';
+  public heroes: Hero[];
+  public selectedHero: Hero;
 
-  model = new Hero(18, 'Dr IQ', this.powers[0], 'Chuck Overstreet');
+  constructor(
+      private router: Router,
+      private heroService: HeroService) { }
 
-  submitted = false;
 
-  onSubmit() { this.submitted = true; }
+  getHeroes(): void {
+    this.heroService.getHeroes().then(heroes => this.heroes = heroes);
+  }
+
+  ngOnInit(): void {
+    this.getHeroes();
+  }
+
+  onSelect(hero: Hero): void {
+    this.selectedHero = hero;
+  }
+
+  gotoDetail(): void {
+     this.router.navigate(['/hero-detail', this.selectedHero.id]);
+  }
 
   // TODO: Remove this when we're done
-  get diagnostic() { return JSON.stringify(this.model); }
+  //get diagnostic() { return JSON.stringify(this.model); }
 }
