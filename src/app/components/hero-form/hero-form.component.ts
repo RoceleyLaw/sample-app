@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Hero }    from '../../models/hero';
 import { HeroService } from '../../services/hero.service';
+import { Router } from '@angular/router';
 
 @Component({
   //Understanding this component requires only the Angular concepts covered in previous guides.
@@ -13,14 +14,19 @@ import { HeroService } from '../../services/hero.service';
   moduleId: module.id,
   selector: 'hero-form',
   providers: [HeroService],
-  templateUrl: 'hero-form.component.html'
+  templateUrl: 'hero-form.component.html',
+  styleUrls:['hero-form.css']
 })
 export class HeroFormComponent implements OnInit {
 
   public title = 'Tour of Heroes';
   public heroes: Hero[];
   public selectedHero: Hero;
-  constructor(private heroService: HeroService) { }
+
+  constructor(
+      private router: Router,
+      private heroService: HeroService) { }
+
 
   getHeroes(): void {
     this.heroService.getHeroes().then(heroes => this.heroes = heroes);
@@ -32,6 +38,10 @@ export class HeroFormComponent implements OnInit {
 
   onSelect(hero: Hero): void {
     this.selectedHero = hero;
+  }
+
+  gotoDetail(): void {
+     this.router.navigate(['/hero-detail', this.selectedHero.id]);
   }
 
   // TODO: Remove this when we're done

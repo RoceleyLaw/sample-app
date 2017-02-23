@@ -10,8 +10,10 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require('@angular/core');
 var hero_service_1 = require('../../services/hero.service');
+var router_1 = require('@angular/router');
 var HeroFormComponent = (function () {
-    function HeroFormComponent(heroService) {
+    function HeroFormComponent(router, heroService) {
+        this.router = router;
         this.heroService = heroService;
         this.title = 'Tour of Heroes';
     }
@@ -25,6 +27,9 @@ var HeroFormComponent = (function () {
     HeroFormComponent.prototype.onSelect = function (hero) {
         this.selectedHero = hero;
     };
+    HeroFormComponent.prototype.gotoDetail = function () {
+        this.router.navigate(['/hero-detail', this.selectedHero.id]);
+    };
     HeroFormComponent = __decorate([
         core_1.Component({
             //Understanding this component requires only the Angular concepts covered in previous guides.
@@ -37,9 +42,10 @@ var HeroFormComponent = (function () {
             moduleId: module.id,
             selector: 'hero-form',
             providers: [hero_service_1.HeroService],
-            templateUrl: 'hero-form.component.html'
+            templateUrl: 'hero-form.component.html',
+            styleUrls: ['hero-form.css']
         }), 
-        __metadata('design:paramtypes', [hero_service_1.HeroService])
+        __metadata('design:paramtypes', [router_1.Router, hero_service_1.HeroService])
     ], HeroFormComponent);
     return HeroFormComponent;
 }());
