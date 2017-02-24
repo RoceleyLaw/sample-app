@@ -15,7 +15,7 @@ var AppComponent = (function () {
     AppComponent = __decorate([
         core_1.Component({
             selector: 'my-app',
-            template: "<h1>The Tour of Heroes</h1>\n                <nav>\n                    <a routerLink=\"/dashboard\" routeLinkActive=\"active\">Dashboard</a>\n                    <a routerLink=\"/heroes\" routeLinkActive=\"active\">Heroes</a>\n                </nav>\n            <router-outlet></router-outlet>"
+            template: "<!-- Navbar -->\n                <nav class=\"navbar navbar-default\">\n                  <div class=\"container\">\n                    <div class=\"navbar-header\">\n                      <button type=\"button\" class=\"navbar-toggle collapsed\" data-toggle=\"collapse\" data-target=\".navbar-collapse\">\n                        <span class=\"icon-bar\"></span>\n                        <span class=\"icon-bar\"></span>\n                        <span class=\"icon-bar\"></span>\n                      </button>\n                      <a class=\"navbar-brand\" href=\"#\">Me</a>\n                    </div>\n                    <div class=\"collapse navbar-collapse\" id=\"myNavbar\">\n                      <ul class=\"nav navbar-nav navbar-right\">\n                        <li><a routerLink=\"/dashboard\" routeLinkActive=\"active\">WHO</a></li>\n                        <li><a routerLink=\"/heroes\" routeLinkActive=\"active\">WHAT</a></li>\n                        <li><a routerLink=\"/heroes\" routeLinkActive=\"active\">WHERE</a></li>\n                      </ul>\n                    </div>\n                  </div>\n                </nav>\n            <router-outlet></router-outlet>"
         }), 
         __metadata('design:paramtypes', [])
     ], AppComponent);
