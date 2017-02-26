@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import * as $ from 'jquery';
+
 
 @Component({
   moduleId: module.id,
@@ -7,5 +9,6 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: [ 'main-page.css' ]
 })
 export class MainPageComponent {
-    constructor() { }
+    constructor() {
+    }
 }
